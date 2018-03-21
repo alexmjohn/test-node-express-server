@@ -21,15 +21,23 @@ app.use((req,res,next)=>{
 
 app.get("/",(request,response)=>{
   response.render("home.hbs",{
-    pageTitle:"Help",
+    pageTitle:"Home Page",
     currentYear:new Date().getFullYear(),
-    message:"some message"
+    message:"home page. Test Application"
   });
 });
 
 app.get("/help",(request,response)=>{
   response.render("help.hbs",{
     pageTitle:"Help",
+    message:"No Help available",
+    currentYear:new Date().getFullYear()
+  });
+});
+
+app.get("/about",(request,response)=>{
+  response.render("about.hbs",{
+    pageTitle:"About the website",
     currentYear:new Date().getFullYear()
   });
 });
